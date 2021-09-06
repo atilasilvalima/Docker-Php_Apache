@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  apache:
+    # Imagem do PHP 7.4 com Apache
+    image: 'php:7.4-apache'
+    # Nome do container
+    container_name: php
+    restart: always
+    # Porta de comunicação
+    # 8081 Navegador para porta 80 do "docker"
+    ports:
+      - '8081:80'
+    # Volume local "/aplicacao" e volume no docker, pasta html, padrão do Apache
+    volumes:
+      - ./aplicacao:/var/www/html
